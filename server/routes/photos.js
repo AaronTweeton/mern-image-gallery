@@ -1,37 +1,27 @@
 const express = require("express");
 const Photo = require("../models/Photo");
 const router = express.Router();
+const {
+  createPhoto,
+  deletePhoto,
+  getPhoto,
+  getPhotos,
+  updatePhoto,
+} = require("../controllers/photoController");
 
 /* GET photo index. */
-router.get("/", function (req, res, next) {
-  res.json({ message: "Respond with photo index." });
-});
+router.get("/", getPhotos);
 
 /* Create photo */
-router.post("/", async (req, res, next) => {
-  const { filename } = req.body;
-
-  try {
-    const photo = await Photo.create({ filename });
-    res.status(200).json(photo);
-  } catch (error) {
-    res.status(200).json({ error: error.message });
-  }
-});
+router.post("/", createPhoto);
 
 /* Read photo */
-router.get("/:id", function (req, res, next) {
-  res.json({ message: `Reading photo with ID: ${req.params.id}.` });
-});
+router.get("/:id", getPhoto);
 
 /* Update photo */
-router.patch("/:id", function (req, res, next) {
-  res.json({ message: `Updating photo with ID: ${req.params.id}.` });
-});
+router.patch("/:id", updatePhoto);
 
 /* Delete photo */
-router.delete("/:id", function (req, res, next) {
-  res.json({ message: `Deleting photo with ID: ${req.params.id}.` });
-});
+router.delete("/:id", deletePhoto);
 
 module.exports = router;
