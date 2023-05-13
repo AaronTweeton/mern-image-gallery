@@ -4,7 +4,7 @@
   "description": "An image gallery using the MERN stack (MongoDB, Express, React, Node).",
   "main": "index.js",
   "scripts": {
-    "start:server": "node ./server/bin/www"
+    "start:server": "nodemon ./server/bin/www"
   },
   "keywords": [
     "mern",
