@@ -1,0 +1,16 @@
+{
+  "name": "mern-image-gallery",
+  "version": "0.1.0",
+  "description": "An image gallery using the MERN stack (MongoDB, Express, React, Node).",
+  "main": "index.js",
+  "scripts": {
+    "start:server": "node ./server/bin/www"
+  },
+  "keywords": [
+    "mern",
+    "image",
+    "gallery"
+  ],
+  "author": "Aaron Tweeton",
+  "license": "ISC"
+}
