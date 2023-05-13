@@ -1,4 +1,5 @@
 const express = require("express");
+const Photo = require("../models/Photo");
 const router = express.Router();
 
 /* GET photo index. */
@@ -7,8 +8,15 @@ router.get("/", function (req, res, next) {
 });
 
 /* Create photo */
-router.post("/", function (req, res, next) {
-  res.json({ message: "Created new photo." });
+router.post("/", async (req, res, next) => {
+  const { filename } = req.body;
+
+  try {
+    const photo = await Photo.create({ filename });
+    res.status(200).json(photo);
+  } catch (error) {
+    res.status(200).json({ error: error.message });
+  }
 });
 
 /* Read photo */
