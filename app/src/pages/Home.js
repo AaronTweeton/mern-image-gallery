@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Photo from "../components/Photo";
+import PhotoForm from "../components/PhotoForm";
 
 const Home = () => {
   const [photos, setPhotos] = useState(null);
@@ -29,6 +30,7 @@ const Home = () => {
           ))}
         </ul>
       )}
+      <PhotoForm />
     </div>
   );
 };
