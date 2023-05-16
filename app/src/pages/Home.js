@@ -20,11 +20,10 @@ const Home = () => {
 
   return (
     <div className="home">
-      <h2>Home</h2>
       {photos?.length ? (
-        <ul>
+        <ul className="photos">
           {photos.map((photo) => (
-            <li key={photo._id}>
+            <li className="photo" key={photo._id}>
               <Photo photo={photo} />
             </li>
           ))}

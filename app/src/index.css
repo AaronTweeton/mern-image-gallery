@@ -3,3 +3,21 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
+
+ul.photos {
+  display: grid;
+  list-style: none;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 0;
+}
+
+li.photo {
+  aspect-ratio: 1/1;
+}
+
+li.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
