@@ -58,3 +58,8 @@ li.photo img {
   object-fit: cover;
   border-radius: var(--border-radius);
 }
+
+.upload {
+  display: grid;
+  place-items: center;
+}

@@ -36,15 +36,14 @@ const PhotoForm = () => {
   }, [photo]);
 
   return (
-    <form>
-      <label htmlFor="file">Your file:</label>{" "}
+    <div class="upload">
       <Widget
         id="file"
         imagesOnly
         onChange={handleUpload}
         publicKey={UPLOADCARE_PUBLIC_KEY}
       />
-    </form>
+    </div>
   );
 };
 
