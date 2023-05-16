@@ -59,6 +59,17 @@ li.photo img {
   border-radius: var(--border-radius);
 }
 
+figure {
+  display: grid;
+  place-items: center;
+  gap: var(--spacer);
+}
+
+figure img {
+  max-height: 80vh;
+  max-width: 100%;
+}
+
 .upload {
   display: grid;
   place-items: center;
