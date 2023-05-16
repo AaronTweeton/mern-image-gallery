@@ -2,7 +2,11 @@ const mongoose = require("mongoose");
 
 const photoSchema = new mongoose.Schema(
   {
-    filename: {
+    cdnUrl: {
+      type: String,
+      required: true,
+    },
+    name: {
       type: String,
       required: true,
     },

@@ -1,10 +1,18 @@
 const Photo = ({ photo }) => {
   return (
     <>
-      <strong>{photo.filename}</strong>&emsp;
-      <small>
-        <span>Created {new Date(photo.createdAt).toLocaleString()}</span>
-      </small>
+      <img
+        alt={photo.name}
+        src={photo.cdnUrl}
+        width={120}
+        height={120}
+        style={{ objectFit: "cover" }}
+      />
+      <div>
+        <small>
+          <span>Created {new Date(photo.createdAt).toLocaleString()}</span>
+        </small>
+      </div>
     </>
   );
 };

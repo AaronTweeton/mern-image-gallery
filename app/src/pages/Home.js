@@ -21,7 +21,7 @@ const Home = () => {
   return (
     <div className="home">
       <h2>Home</h2>
-      {photos && (
+      {photos?.length ? (
         <ul>
           {photos.map((photo) => (
             <li key={photo._id}>
@@ -29,6 +29,8 @@ const Home = () => {
             </li>
           ))}
         </ul>
+      ) : (
+        <p>No photos found.</p>
       )}
       <PhotoForm />
     </div>

@@ -6,17 +6,37 @@ const PhotoForm = () => {
   const [photo, setPhoto] = useState();
 
   const handleUpload = (info) => {
+    console.log(info);
     if (info) {
       setPhoto(info);
     }
   };
 
+  const savePhoto = async () => {
+    const body = {
+      name: photo.name,
+      cdnUrl: photo.cdnUrl,
+    };
+
+    const response = await fetch("/api/photos", {
+      method: "POST",
+      body: JSON.stringify(photo),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const json = await response.json();
+  };
+
   useEffect(() => {
-    console.log(photo);
+    if (photo) {
+      savePhoto();
+    }
   }, [photo]);
 
   return (
-    <p>
+    <form>
       <label htmlFor="file">Your file:</label>{" "}
       <Widget
         id="file"
@@ -24,7 +44,7 @@ const PhotoForm = () => {
         onChange={handleUpload}
         publicKey={UPLOADCARE_PUBLIC_KEY}
       />
-    </p>
+    </form>
   );
 };
 

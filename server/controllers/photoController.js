@@ -7,10 +7,10 @@ const getPhotos = async (req, res) => {
 };
 
 const createPhoto = async (req, res) => {
-  const { filename } = req.body;
+  const { cdnUrl, name } = req.body;
 
   try {
-    const photo = await Photo.create({ filename });
+    const photo = await Photo.create({ cdnUrl, name });
     res.status(200).json(photo);
   } catch (error) {
     res.status(400).json({ error: error.message });
