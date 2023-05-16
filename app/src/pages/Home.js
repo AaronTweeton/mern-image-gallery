@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Thumbnail from "../components/Thumbnail";
-import PhotoForm from "../components/PhotoForm";
 
 const Home = () => {
   const [photos, setPhotos] = useState(null);
@@ -31,7 +30,6 @@ const Home = () => {
       ) : (
         <p>No photos found.</p>
       )}
-      <PhotoForm />
     </div>
   );
 };

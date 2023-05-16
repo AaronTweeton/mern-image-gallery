@@ -6,6 +6,9 @@ const Navbar = () => {
       <Link to="/">
         <h1>Photos</h1>
       </Link>
+      <Link to="/new" className="button">
+        Add New
+      </Link>
     </header>
   );
 };
