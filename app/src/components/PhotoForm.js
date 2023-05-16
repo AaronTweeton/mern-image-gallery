@@ -36,7 +36,7 @@ const PhotoForm = () => {
   }, [photo]);
 
   return (
-    <div class="upload">
+    <div className="upload">
       <Widget
         id="file"
         imagesOnly
