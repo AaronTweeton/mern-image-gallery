@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Photo from "../components/Photo";
+import Thumbnail from "../components/Thumbnail";
 import PhotoForm from "../components/PhotoForm";
 
 const Home = () => {
@@ -24,7 +24,7 @@ const Home = () => {
         <ul className="photos">
           {photos.map((photo) => (
             <li className="photo" key={photo._id}>
-              <Photo photo={photo} />
+              <Thumbnail photo={photo} />
             </li>
           ))}
         </ul>
