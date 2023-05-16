@@ -17,6 +17,27 @@ a {
   color: var(--accent-color);
 }
 
+header {
+  align-items: baseline;
+  display: flex;
+  gap: var(--spacer);
+}
+
+h1 {
+  margin: 0;
+}
+
+figure {
+  display: grid;
+  place-items: center;
+  gap: var(--spacer);
+}
+
+figure img {
+  max-height: 80vh;
+  max-width: 100%;
+}
+
 .button {
   background-color: var(--accent-color);
   color: white;
@@ -30,14 +51,11 @@ a {
   background-color: #3891ff;
 }
 
-header {
-  align-items: baseline;
-  display: flex;
-  gap: var(--spacer);
-}
-
-h1 {
-  margin: 0;
+.error {
+  background-color: crimson;
+  border-radius: var(--border-radius);
+  padding: var(--spacer);
+  text-align: center;
 }
 
 ul.photos {
@@ -57,17 +75,6 @@ li.photo img {
   height: 100%;
   object-fit: cover;
   border-radius: var(--border-radius);
-}
-
-figure {
-  display: grid;
-  place-items: center;
-  gap: var(--spacer);
-}
-
-figure img {
-  max-height: 80vh;
-  max-width: 100%;
 }
 
 .upload {

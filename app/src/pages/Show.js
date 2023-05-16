@@ -4,12 +4,15 @@ import { useParams } from "react-router-dom";
 export const Show = () => {
   const { id } = useParams();
   const [photo, setPhoto] = useState();
+  const [error, setError] = useState();
 
   const getPhoto = async () => {
     const response = await fetch(`/api/photos/${id}`);
     const json = await response.json();
     if (response.ok) {
       setPhoto(json);
+    } else {
+      setError(response.statusText);
     }
   };
 
@@ -30,6 +33,7 @@ export const Show = () => {
           <figcaption>{photo.name}</figcaption>
         </figure>
       ) : null}
+      {error ? <div className="error">{error}</div> : null}
     </>
   );
 };
