@@ -1,8 +1,10 @@
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Widget } from "@uploadcare/react-widget";
 import { UPLOADCARE_PUBLIC_KEY } from "../private/keys";
-import { useEffect, useState } from "react";
 
 const PhotoForm = () => {
+  const navigate = useNavigate();
   const [photo, setPhoto] = useState();
 
   const handleUpload = (info) => {
@@ -13,11 +15,6 @@ const PhotoForm = () => {
   };
 
   const savePhoto = async () => {
-    const body = {
-      name: photo.name,
-      cdnUrl: photo.cdnUrl,
-    };
-
     const response = await fetch("/api/photos", {
       method: "POST",
       body: JSON.stringify(photo),
@@ -27,6 +24,9 @@ const PhotoForm = () => {
     });
 
     const json = await response.json();
+    if (json) {
+      navigate("/");
+    }
   };
 
   useEffect(() => {
