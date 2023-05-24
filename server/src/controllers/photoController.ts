@@ -1,5 +1,5 @@
-const Photo = require("../models/Photo");
-const mongoose = require("mongoose");
+import Photo from "../models/Photo";
+import mongoose, { Error } from "mongoose";
 
 const getPhotos = async (req, res) => {
   const photos = await Photo.find({}).sort({ createdAt: -1 });
@@ -12,8 +12,10 @@ const createPhoto = async (req, res) => {
   try {
     const photo = await Photo.create({ cdnUrl, name });
     res.status(200).json(photo);
-  } catch (error) {
-    res.status(400).json({ error: error.message });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      res.status(400).json({ error: error.message });
+    }
   }
 };
 
@@ -67,10 +69,4 @@ const deletePhoto = async (req, res) => {
   res.status(200).json(photo);
 };
 
-module.exports = {
-  createPhoto,
-  deletePhoto,
-  getPhotos,
-  getPhoto,
-  updatePhoto,
-};
+export { createPhoto, deletePhoto, getPhotos, getPhoto, updatePhoto };
