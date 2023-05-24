@@ -1,13 +1,12 @@
-const express = require("express");
-const Photo = require("../models/Photo");
+import express from "express";
 const router = express.Router();
-const {
+import {
   createPhoto,
   deletePhoto,
   getPhoto,
   getPhotos,
   updatePhoto,
-} = require("../controllers/photoController");
+} from "../controllers/photoController";
 
 /* GET photo index. */
 router.get("/", getPhotos);
@@ -24,4 +23,4 @@ router.patch("/:id", updatePhoto);
 /* Delete photo */
 router.delete("/:id", deletePhoto);
 
-module.exports = router;
+export default router;

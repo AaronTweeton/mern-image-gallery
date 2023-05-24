@@ -1,5 +1,5 @@
-const Photo = require("../models/Photo");
-const mongoose = require("mongoose");
+import Photo from "../models/Photo";
+import mongoose from "mongoose";
 
 const getPhotos = async (req, res) => {
   const photos = await Photo.find({}).sort({ createdAt: -1 });
@@ -67,10 +67,4 @@ const deletePhoto = async (req, res) => {
   res.status(200).json(photo);
 };
 
-module.exports = {
-  createPhoto,
-  deletePhoto,
-  getPhotos,
-  getPhoto,
-  updatePhoto,
-};
+export { createPhoto, deletePhoto, getPhotos, getPhoto, updatePhoto };
