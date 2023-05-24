@@ -1,13 +1,13 @@
-var createError = require("http-errors");
-var express = require("express");
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
+import createError from "http-errors";
+import express from "express";
+import path from "path";
+import cookieParser from "cookie-parser";
+import logger from "morgan";
 
-var indexRouter = require("../routes/index");
-const photosRouter = require("../routes/photos");
+import indexRouter from "../routes/index";
+import photosRouter from "../routes/photos";
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
